@@ -66,9 +66,9 @@ void invertir(char *s) {
 ## 4. Fase 3: El Auditor (Resultados del Test Harness)
 *Pruebas ejecutadas:* Valores NULL, buffers vacios y longitudes impares
 
-* [ ] Caso base y límites superados sin *Crash*.
-* [ ] No existen accesos fuera de límites ni *Memory Leaks*.
-* [ ] La complejidad teórica coincide con la implementada.
+* [✓] Caso base y límites superados sin *Crash*.
+* [✓] No existen accesos fuera de límites ni *Memory Leaks*.
+* [✓] La complejidad teórica coincide con la implementada.
 
 ### Reporte Crítico
 *¿Qué caso borde o problema omitió la IA y cómo lo solucionaste?*
