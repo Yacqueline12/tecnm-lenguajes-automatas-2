@@ -150,4 +150,4 @@ TODO EN VERDE. Documenta tu auditoria en auditorias/auditoria_sesion02.md
 > Al revisar el código, tomé en cuenta los punteros nulos, los errores al reservar memoria y los textos muy largos. Las seis pruebas salieron bien, aunque todavía harían falta otras pruebas para comprobar que no haya salido algo mal.
 
 ---
-**Firma digital:** [YACQUELINECANCHE]
+**Firma digital:** [YACQUELINECANCHE].
