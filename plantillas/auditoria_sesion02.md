@@ -2,16 +2,16 @@
 **Materia:** Lenguajes y Autómatas II (SCD-1016)  
 **Tema:** Gestión en GitHub Web y Nodos Dinámicos  
 **Docente Titular:** MCC. Iván Márquez Larios (`ijmarquezl`)  
-**Estudiante:** [Nombre Completo]  
-**Matrícula:** [No. de Control]  
-**Track:** [ C | Rust ]  
+**Estudiante:** [Jimena Yacqueline Canche Pablo]  
+**Matrícula:** [24531347]  
+**Track:** [ C ]  
 
 ---
 
 ## 1. Fase 1: El Artesano (Dificultad Manual)
 *Reto:* Lista enlazada de tokens en Heap  
 *Describe qué problema o restricción de memoria/sintaxis identificaste al codificar a mano:*
-> 
+> Al realizar esta práctica, se me dificultó un poco entender cómo reservar memoria y conectar los nodos con punteros, se me dificulta un poco porque estoy aprendiendo a utilizar nuevamente GitHub, ya que hace tiempo que no lo uso e intento familiarizarme más con sus herramientas.
 
 ---
 
@@ -51,4 +51,4 @@
 > 
 
 ---
-**Firma digital:** [Usuario de GitHub]
+**Firma digital:** [YACQUELINECANCHE]
