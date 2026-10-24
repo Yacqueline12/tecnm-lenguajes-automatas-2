@@ -26,37 +26,48 @@
 
 ### 2.2 Prompt Estructurado
 ```text
-[Necesito una función en lenguaje C que se llame invertir(char *s) y que invierta una cadena en el mismo espacio de memoria, sin crear otra cadena ni utilizar malloc. Debe funcionar con cadenas de diferentes longitudes y conservar la misma firma de la función. También debe revisar si el valor recibido es NULL o si la cadena está vacía, para evitar errores. Utiliza una variable temporal para intercambiar los caracteres. El tiempo de ejecución debe ser O(n) y la memoria adicional O(1). Entrega el código y una explicación breve de cómo funciona.]
+[Contexto: Sesión 01 de Lenguajes y Autómatas II. Invertir una cadena en C sin memoria adicional.
+
+Rol: Actúa como experto en C y manejo de punteros.
+
+Especificación: Implementa void invertir(char *s); según api_sesion01.h. Invierte la cadena en el mismo buffer, maneja NULL y cadenas vacías, no uses malloc ni arreglos auxiliares y compila sin advertencias. No incluyas main().
+
+Output: Entrega el código completo de ia_sesion01_c.c listo para Google Colab con %%writefile y explica brevemente su funcionamiento.]
 ```
 
 ---
 
 ## 3. Código Devuelto por el Modelo
 ```c
-// #include "api_sesion01.h"
+
+%%writefile artesano_sesion01_c.c
+#include "api_sesion01.h"
 #include <string.h>
 
 void invertir(char *s) {
+    size_t izquierda = 0;
+    size_t derecha;
+    char temporal;
+
     if (s == NULL) {
         return;
     }
 
-    size_t n = strlen(s);
+    derecha = strlen(s);
 
-    if (n == 0) {
+    if (derecha == 0) {
         return;
     }
 
-    size_t i = 0;
-    size_t j = n - 1;
+    derecha--;
 
-    while (i < j) {
-        char temporal = s[i];
-        s[i] = s[j];
-        s[j] = temporal;
+    while (izquierda < derecha) {
+        temporal = s[izquierda];
+        s[izquierda] = s[derecha];
+        s[derecha] = temporal;
 
-        i++;
-        j--;
+        izquierda++;
+        derecha--;
     }
 }
 ```
@@ -66,14 +77,16 @@ void invertir(char *s) {
 ## 4. Fase 3: El Auditor (Resultados del Test Harness)
 *Pruebas ejecutadas:* Valores NULL, buffers vacios y longitudes impares
 === AUDITORIA SESION 01 - Inversion de buffer in-place ===
-Caso                               esperado:              obtenido:              resultado
-[ 1] invertir("HOLA")                   esperado: ALOH         obtenido: ALOH         OK
-[ 2] invertir("abc")                    esperado: cba          obtenido: cba          OK
-[ 3] invertir("")                       esperado:              obtenido:              OK
-[ 4] invertir("AB")                     esperado: BA           obtenido: BA           OK
-[ 5] invertir("a")                      esperado: a            obtenido: a            OK
-[ 6] invertir(NULL)                     esperado: sin crash    obtenido: sin crash    OK
+Caso                               esperado:              obtenido:          resultado
+[ 1] invertir("HOLA")               esperado: ALOH         obtenido: ALOH         OK
+[ 2] invertir("abc")                esperado: cba          obtenido: cba          OK
+[ 3] invertir("")                   esperado:              obtenido:              OK
+[ 4] invertir("AB")                 esperado: BA           obtenido: BA           OK
+[ 5] invertir("a")                  esperado: a            obtenido: a            OK
+[ 6] invertir(NULL)                 esperado: sin crash    obtenido: sin crash    OK
 
+RESULTADO: 6/6 pruebas superadas
+TODO EN VERDE. Documenta tu auditoria en auditorias/auditoria_sesion01.md
 
 * [✓] Caso base y límites superados sin *Crash*.
 * [✓] No existen accesos fuera de límites ni *Memory Leaks*.
