@@ -41,8 +41,6 @@ Output: Quiero que me entregues el código completo de ia_sesion04_c.c, con come
 
 ## 3. Código Devuelto por el Modelo
 ```c
-// Código devuelto por el LLM
-```
 %%writefile ia_sesion04_c.c
 
 #include "api_sesion04.h"
@@ -113,6 +111,8 @@ int evaluar(ASTNode *n) {
             return -1;
     }
 }
+```
+
 ---
 
 ## 4. Fase 3: El Auditor (Resultados del Test Harness)
