@@ -119,6 +119,7 @@ int evaluar(ASTNode *n) {
 *Pruebas ejecutadas:* Árbol vacío y evaluación de nodo raíz
 
 === AUDITORIA SESION 04 - Nodo binario de AST ===
+
 Caso                                esperado:              obtenido:         resultado
 [ 1] evaluar(nodo 42)               esperado: 42       obtenido: 42           OK
 [ 2] evaluar(3+5*2)                 esperado: 13           obtenido: 13           OK
