@@ -120,7 +120,7 @@ int evaluar(ASTNode *n) {
 
 === AUDITORIA SESION 04 - Nodo binario de AST ===
 
-Caso                              esperado:              obtenido:         resultado
+Caso                              esperado:              obtenido:        resultado
 
 [ 1] evaluar(nodo 42)             esperado: 42       obtenido: 42           OK
 
