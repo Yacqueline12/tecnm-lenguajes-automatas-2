@@ -118,6 +118,7 @@ int evaluar(ASTNode *n) {
 ## 4. Fase 3: El Auditor (Resultados del Test Harness)
 *Pruebas ejecutadas:* Árbol vacío y evaluación de nodo raíz
 
+
 * [✓] Caso base y límites superados sin *Crash*.
 * [✓] No existen accesos fuera de límites ni *Memory Leaks*.
 * [✓] La complejidad teórica coincide con la implementada.
