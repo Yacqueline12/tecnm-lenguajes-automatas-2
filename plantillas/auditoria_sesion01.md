@@ -76,20 +76,21 @@ void invertir(char *s) {
 
 ## 4. Fase 3: El Auditor (Resultados del Test Harness)
 *Pruebas ejecutadas:* Valores NULL, buffers vacios y longitudes impares
+
 === AUDITORIA SESION 01 - Inversion de buffer in-place ===
-Caso                               esperado:              obtenido:          resultado
+Caso                                esperado:                  obtenido:           resultado
 
-[ 1] invertir("HOLA")               esperado: ALOH         obtenido: ALOH         OK
+[ 1] invertir("HOLA")               esperado: ALOH           obtenido: ALOH          OK
 
-[ 2] invertir("abc")                esperado: cba          obtenido: cba          OK
+[ 2] invertir("abc")                esperado: cba            obtenido: cba          OK
 
-[ 3] invertir("")                   esperado:              obtenido:              OK
+[ 3] invertir("")                   esperado:                obtenido:              OK
 
-[ 4] invertir("AB")                 esperado: BA           obtenido: BA           OK
+[ 4] invertir("AB")                 esperado: BA             obtenido: BA           OK
 
-[ 5] invertir("a")                  esperado: a            obtenido: a            OK
+[ 5] invertir("a")                  esperado: a              obtenido: a            OK
 
-[ 6] invertir(NULL)                 esperado: sin crash    obtenido: sin crash    OK
+[ 6] invertir(NULL)                 esperado: sin crash     obtenido: sin crash    OK
 
 RESULTADO: 6/6 pruebas superadas
 TODO EN VERDE. Documenta tu auditoria en auditorias/auditoria_sesion01.md
