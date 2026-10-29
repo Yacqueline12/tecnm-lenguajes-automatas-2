@@ -11,7 +11,7 @@
 ## 1. Fase 1: El Artesano (Dificultad Manual)
 *Reto:* Inversión de buffer in-place (char*)  
 *Describe qué problema o restricción de memoria/sintaxis identificaste al codificar a mano:*
-> Al realizar este ejercicio, se me dificulto un poco porque todavía no se usar muy bien GitHub y me confundí un poco al momento de trabajar con los archivos y el código. También tuve dudas sobre cómo invertir la cadena sin crear otra. Poco a poco fui entendiendo cómo hacerlo y cómo comprobar que el programa funcionara correctamente.
+> Al realizar este ejercicio, se me dificultó un poco trabajar con los punteros y entender cómo invertir una cadena sin utilizar otro espacio de memoria. También tuve algunas dudas al momento de modificar los caracteres directamente, pero con la práctica fui comprendiendo cómo intercambiar las posiciones y comprobar que el programa funcionara correctamente.
 ---
 
 ## 2. Fase 2: El Científico (Ingeniería de Requerimientos C-R-E-O)
@@ -26,13 +26,13 @@
 
 ### 2.2 Prompt Estructurado
 ```text
-[Contexto: Sesión 01 de Lenguajes y Autómatas II. Invertir una cadena en C sin memoria adicional.
+[Contexto: Estoy trabajando en la sesión 01 de Lenguajes y Autómatas II, lo que quiero es invertir una cadena en C sin memoria adicional.
 
-Rol: Actúa como experto en C y manejo de punteros.
+Rol: Quiero que actues como experto en C y manejo de punteros.
 
-Especificación: Implementa void invertir(char *s); según api_sesion01.h. Invierte la cadena en el mismo buffer, maneja NULL y cadenas vacías, no uses malloc ni arreglos auxiliares y compila sin advertencias. No incluyas main().
+Especificación: implementa void invertir(char *s); según api_sesion01.h. Invierte la cadena en el mismo buffer, maneja NULL y cadenas vacías, no uses malloc ni arreglos auxiliares y compila sin advertencias. No incluyas main().
 
-Output: Entrega el código completo de ia_sesion01_c.c listo para Google Colab con %%writefile y explica brevemente su funcionamiento.]
+Output: entrega el código completo de ia_sesion01_c.c listo para Google Colab con %%writefile y explica brevemente su funcionamiento.]
 ```
 
 ---
@@ -78,11 +78,17 @@ void invertir(char *s) {
 *Pruebas ejecutadas:* Valores NULL, buffers vacios y longitudes impares
 === AUDITORIA SESION 01 - Inversion de buffer in-place ===
 Caso                               esperado:              obtenido:          resultado
+
 [ 1] invertir("HOLA")               esperado: ALOH         obtenido: ALOH         OK
+
 [ 2] invertir("abc")                esperado: cba          obtenido: cba          OK
+
 [ 3] invertir("")                   esperado:              obtenido:              OK
+
 [ 4] invertir("AB")                 esperado: BA           obtenido: BA           OK
+
 [ 5] invertir("a")                  esperado: a            obtenido: a            OK
+
 [ 6] invertir(NULL)                 esperado: sin crash    obtenido: sin crash    OK
 
 RESULTADO: 6/6 pruebas superadas
