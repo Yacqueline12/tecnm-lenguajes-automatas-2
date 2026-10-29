@@ -27,13 +27,13 @@
 
 ### 2.2 Prompt Estructurado
 ```text
-[Contexto: Estoy trabajando en una práctica de C sobre listas enlazadas y memoria dinámica de la asignarura de Lenguajes y Automatas II.
+[Contexto: estoy trabajando en una práctica de C sobre listas enlazadas y memoria dinámica de la asignarura de Lenguajes y Automatas II.
 
-Rol: Quiero que actúes como un programador que me ayude a resolver el ejercicio.
+Rol: quiero que actúes como un programador que me ayude a resolver el ejercicio.
 
-Especificación: Necesito las funciones crear_nodo(), agregar_token(), contar_tokens() y liberar_lista(), respetando el archivo api_sesion02.h. El código debe utilizar malloc() y free(), revisar los punteros nulos y evitar errores al copiar los lexemas.
+Especificación: necesito las funciones crear_nodo(), agregar_token(), contar_tokens() y liberar_lista(), respetando el archivo api_sesion02.h. El código debe utilizar malloc() y free(), revisar los punteros nulos y evitar errores al copiar los lexemas.
 
-Output: Dame el código completo para ia_sesion02_c.c, sin incluir main(), y que compile correctamente.]
+Output: dame el código completo para ia_sesion02_c.c, sin incluir main(), y que compile correctamente.]
 ```
 
 ---
@@ -118,14 +118,23 @@ void liberar_lista(NodoToken *cabeza) {
 
 ## 4. Fase 3: El Auditor (Resultados del Test Harness)
 *Pruebas ejecutadas:* Prevención de Use-After-Free y cadenas nulas
+
 === AUDITORIA SESION 02 - Lista enlazada de tokens en heap ===
+
 Caso                               esperado:              obtenido:              resultado
+
 [ 1] crear_nodo("if")->lexema           esperado: if           obtenido: if           OK
+
 [ 2] contar_tokens(3 tokens)            esperado: 3            obtenido: 3            OK
+
 [ 3] orden: segundo token               esperado: dos          obtenido: dos          OK
+
 [ 4] ultimo->siguiente == NULL          esperado: 1            obtenido: 1            OK
+
 [ 5] contar_tokens(NULL)                esperado: 0            obtenido: 0            OK
+
 [ 6] liberar_lista(NULL)                esperado: sin crash    obtenido: sin crash    OK
+
 
 Resultado Final: 6 de 6 pruebas superadas. Todas las pruebas del Test Harness se ejecutaron correctamente y no se presentaron errores durante su ejecución.
 
