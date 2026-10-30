@@ -116,4 +116,4 @@ TODO EN VERDE. Documenta tu auditoria en auditorias/auditoria_sesion06.md
 > Un caso que revisé fue cuando se utilizan tipos de datos que no están definidos o cuando alguno de los valores es TIPO_ERROR. La IA podía pasar por alto la validación de estos casos. Para solucionarlo, revisé el código y agregué condiciones que comprueban que los tipos sean válidos antes de realizar la comparación. Así evité que se aceptaran asignaciones incorrectas y comprobé que el programa cumpliera con lo solicitado.
 
 ---
-**Firma digital:** [Usuario de GitHub]
+**Firma digital:** [YACQUELINECANCHE]
