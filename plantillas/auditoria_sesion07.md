@@ -2,16 +2,16 @@
 **Materia:** Lenguajes y Autómatas II (SCD-1016)  
 **Tema:** Evaluación de Expresiones Aritméticas  
 **Docente Titular:** MCC. Iván Márquez Larios (`ijmarquezl`)  
-**Estudiante:** [Nombre Completo]  
-**Matrícula:** [No. de Control]  
-**Track:** [ C | Rust ]  
+**Estudiante:** [Jimena Yacqueline Canche Pablo]  
+**Matrícula:** [24531347]  
+**Track:** [ C ]  
 
 ---
 
 ## 1. Fase 1: El Artesano (Dificultad Manual)
 *Reto:* Evaluador recursivo de operaciones  
 *Describe qué problema o restricción de memoria/sintaxis identificaste al codificar a mano:*
-> 
+> Al desarrollar la función de manera manual, se me dificulto el comprender cómo propagar los errores que se generaban en los nodos hijos sin seguir evaluando el resto del árbol. También tuve que tener cuidado con las operaciones de división y módulo para verificar primero que el divisor no fuera cero y evitar errores durante la ejecución.
 
 ---
 
@@ -27,14 +27,89 @@
 
 ### 2.2 Prompt Estructurado
 ```text
-[Pega aquí el prompt formal que redactaste para la IA]
+[Contexto: estoy desarrollando una función en lenguaje C para una práctica de Lenguajes y Autómatas II. La función debe evaluar expresiones aritméticas representadas mediante un árbol sintáctico (AST). También debe detectar errores como divisiones o módulos entre cero y reportarlos sin provocar fallos en la ejecución.
+
+Rol: actúa como un programador con experiencia en lenguaje C y estructuras de datos recursivas. Genera una solución clara, sencilla y compatible con programación académica.
+
+Especificación: implementa la función evaluar(ASTNode *n, int *error) para recorrer y evaluar un árbol de expresiones aritméticas de forma recursiva. La función debe devolver el valor calculado, detectar divisiones o módulos entre cero asignando error = 1, y reportar error = 2 cuando el nodo sea inválido (NULL). Además, cualquier error encontrado en los nodos hijos debe propagarse sin seguir evaluando el árbol. La implementación debe respetar la estructura dada, no incluir main() y compilar correctamente con gcc -std=c11 -Wall -Wextra -Werror.
+
+Output: devuelve únicamente el código completo de la función evaluar() en lenguaje C, respetando exactamente la firma proporcionada.]
 ```
 
 ---
 
 ## 3. Código Devuelto por el Modelo
 ```c
-// Código devuelto por el LLM
+%%writefile ia_sesion07_c.c
+#include "api_sesion07.h"
+
+int evaluar(ASTNode *n, int *error)
+{
+    int izq;
+    int der;
+
+    if (!error)
+    {
+        return 0;
+    }
+
+    if (!n)
+    {
+        *error = 2;
+        return 0;
+    }
+
+    if (n->tipo == NODO_NUM)
+    {
+        return n->valor;
+    }
+
+    izq = evaluar(n->izq, error);
+
+    if (*error)
+    {
+        return 0;
+    }
+
+    der = evaluar(n->der, error);
+
+    if (*error)
+    {
+        return 0;
+    }
+
+    switch (n->op)
+    {
+        case '+':
+            return izq + der;
+
+        case '-':
+            return izq - der;
+
+        case '*':
+            return izq * der;
+
+        case '/':
+            if (der == 0)
+            {
+                *error = 1;
+                return 0;
+            }
+            return izq / der;
+
+        case '%':
+            if (der == 0)
+            {
+                *error = 1;
+                return 0;
+            }
+            return izq % der;
+
+        default:
+            *error = 2;
+            return 0;
+    }
+}
 ```
 
 ---
@@ -42,13 +117,29 @@
 ## 4. Fase 3: El Auditor (Resultados del Test Harness)
 *Pruebas ejecutadas:* Expresiones complejas y división por 0
 
-* [ ] Caso base y límites superados sin *Crash*.
-* [ ] No existen accesos fuera de límites ni *Memory Leaks*.
-* [ ] La complejidad teórica coincide con la implementada.
+=== AUDITORÍA SESIÓN 07 - Evaluador recursivo con detección de errores ===
+
+Caso                               esperado:          obtenido:          resultado
+-----------------------------------------------------------------------------------
+[ 1] (2+3)*4                       esperado: 20       obtenido: 20       OK
+[ 2] 7/0 -> error 1                esperado: 1        obtenido: 1        OK
+[ 3] 7%0 -> error 1                esperado: 1        obtenido: 1        OK
+[ 4] árbol NULL -> error 2         esperado: 2        obtenido: 2        OK
+[ 5] 10-2-3                        esperado: 5        obtenido: 5        OK
+[ 6] (8/2)+1                       esperado: 5        obtenido: 5        OK
+
+RESULTADO: 6/6 pruebas superadas
+TODO EN VERDE. Documentada la auditoría en auditorias/auditoria_sesion07.md
+
+
+
+* [✓] Caso base y límites superados sin *Crash*.
+* [✓] No existen accesos fuera de límites ni *Memory Leaks*.
+* [✓] La complejidad teórica coincide con la implementada.
 
 ### Reporte Crítico
 *¿Qué caso borde o problema omitió la IA y cómo lo solucionaste?*
-> 
+> La propuesta generada por la IA resolvía correctamente las operaciones aritméticas principales, pero verificque cuidadosamente el manejo del caso donde el árbol recibido es NULL. Este caso se detectó gracias al harness de pruebas, que comprobaba explícitamente la asignación de error = 2. Después de revisar la implementación, confirmé que el error se propagaba correctamente y que la función cumplía con todos los casos de prueba.
 
 ---
-**Firma digital:** [Usuario de GitHub]
+**Firma digital:** [YACQUELINECANCHE]
