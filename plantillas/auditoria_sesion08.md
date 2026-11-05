@@ -102,13 +102,14 @@ const char *nombre_tipo(Tipo t)
 
 ## 4. Fase 3: El Auditor (Resultados del Test Harness)
 *Pruebas ejecutadas:* Mezcla de tipos enteros y flotantes
+
 === AUDITORIA SESION 08 - Reglas de promocion y perdida ===
 
-Caso                             esperado:             obtenido:          resultado
+Caso                                      esperado:             obtenido:          resultado
 
 [ 1]   promover  (CHAR,INT)          esperado: int         obtenido: int          OK
 
-[ 2]   promover   (INT,FLOAT)         esperado: float       obtenido: float        OK
+[ 2]   promover   (INT,FLOAT)        esperado: float       obtenido: float        OK
 
 [ 3]   promover     (FLOAT,FLOAT)       esperado: float       obtenido: float       OK
 
