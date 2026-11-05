@@ -106,15 +106,15 @@ const char *nombre_tipo(Tipo t)
 
 Caso                             esperado:             obtenido:          resultado
 
-[ 1] promover(CHAR,INT)          esperado: int         obtenido: int          OK
+[ 1]   promover  (CHAR,INT)          esperado: int         obtenido: int          OK
 
-[ 2] promover(INT,FLOAT)         esperado: float       obtenido: float        OK
+[ 2]   promover   (INT,FLOAT)         esperado: float       obtenido: float        OK
 
-[ 3] promover(FLOAT,FLOAT)       esperado: float       obtenido: float        OK
+[ 3]   promover     (FLOAT,FLOAT)       esperado: float       obtenido: float       OK
 
-[ 4] promover(ERROR,INT)         esperado: error       obtenido: error        OK
+[ 4]   promover     (ERROR,INT)         esperado: error       obtenido: error        OK
 
-[ 5] hay_perdida(CHAR,INT)       esperado: 1           obtenido: 1            OK
+[ 5]   hay_perdida  (CHAR,INT)       esperado: 1           obtenido: 1            OK
 
 [ 6] hay_perdida(INT,CHAR)       esperado: 0           obtenido: 0            OK
 
