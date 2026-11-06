@@ -11,7 +11,7 @@
 ## 1. Fase 1: El Artesano (Dificultad Manual)
 *Reto:* Integración AST y Tipado Estático  
 *Describe qué problema o restricción de memoria/sintaxis identificaste al codificar a mano:*
-> 
+> Al desarrollar la solución de forma manual, la principal dificultad fue lograr que el evaluador respetara correctamente la precedencia de los operadores, tambien tuve que analizar cómo hacer que las multiplicaciones y divisiones se resolvieran antes que las sumas y restas, además de manejar correctamente los paréntesis, por ultimo también fue importante identificar cuándo una expresión tenía un error de sintaxis y cuándo se trataba específicamente de una división entre cero.
 
 ---
 
@@ -51,6 +51,8 @@ Output: devuelve únicamente el contenido completo de un archivo .c listo para c
  * que declara api_sesion10.h. No puede traer main().
  */
 #include "api_sesion10.h"
+#include <ctype.h>
+#include <stddef.h>
 
 typedef struct { const char *s; int error; } Parser;
 
@@ -80,7 +82,8 @@ long primaria(Parser *p)
     long valor;
 
     saltar(p);
-if (isdigit((unsigned char)*p->s))
+
+    if (isdigit((unsigned char)*p->s))
         return leer_numero(p);
 
     if (*p->s == '(')
@@ -100,7 +103,8 @@ if (isdigit((unsigned char)*p->s))
         p->s++;
         return valor;
     }
- p->error = 2;
+
+    p->error = 2;
     return 0;
 }
 
@@ -127,7 +131,7 @@ long termino(Parser *p)
 
             if (rhs == 0)
             {
- p->error = 1;
+                p->error = 1;
                 return 0;
             }
 
@@ -155,8 +159,7 @@ long expr(Parser *p)
         if (*p->s == '+')
         {
             p->s++;
-
-rhs = termino(p);
+            rhs = termino(p);
             resultado += rhs;
         }
         else if (*p->s == '-')
@@ -173,6 +176,7 @@ rhs = termino(p);
 
     return resultado;
 }
+
 long evaluar_expresion(const char *fuente, int *error)
 {
     static int sin_error;
@@ -187,7 +191,8 @@ long evaluar_expresion(const char *fuente, int *error)
         *error = 2;
         return 0;
     }
-Parser p = { fuente, 0 };
+
+    Parser p = { fuente, 0 };
 
     long valor = expr(&p);
 
@@ -243,7 +248,7 @@ TODO EN VERDE. Documenta tu auditoria en auditorias/auditoria_sesion10.md
 
 ### Reporte Crítico
 *¿Qué caso borde o problema omitió la IA y cómo lo solucionaste?*
-> 
+> La IA me proporcionó una solución que en general funcionaba bien, pero al momento de compilar encontré un pequeño problema porque faltaba una biblioteca necesaria para reconocer NULL, revisé el código, agregué la cabecera que hacía falta y volví a ejecutar las pruebas, después de corregir ese detalle, comprobé que el programa funcionaba correctamente y que identificaba tanto los errores de sintaxis como las divisiones entre cero de la manera esperada.
 
 ---
-**Firma digital:** [Usuario de GitHub]
+**Firma digital:** [Yacqueline12]
