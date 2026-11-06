@@ -111,13 +111,13 @@ RESULTADO: 4/4 pruebas superadas
 
 TODO EN VERDE. Documenta tu auditoria en auditorias/auditoria_sesion09.md
 
-* [ ] Caso base y límites superados sin *Crash*.
-* [ ] No existen accesos fuera de límites ni *Memory Leaks*.
-* [ ] La complejidad teórica coincide con la implementada.
+* [✓] Caso base y límites superados sin *Crash*.
+* [✓] No existen accesos fuera de límites ni *Memory Leaks*.
+* [✓] La complejidad teórica coincide con la implementada.
 
 ### Reporte Crítico
 *¿Qué caso borde o problema omitió la IA y cómo lo solucionaste?*
-> La IA generó el código, pero fue necesario que lo revisara 
+> La IA generó el código, pero fue necesario que lo revisara para asegurarme de que cumpliera exactamente con los requisitos de la práctica. Verifiqué que la función respetara el formato solicitado, que no incluyera una función main() y que manejara correctamente el tamaño del buffer para evitar errores. Después de realizar las pruebas con el harness confirmé que todos los casos fueron superados correctamente.
 
 ---
-**Firma digital:** [Usuario de GitHub]
+**Firma digital:** [YACQUELINE CANCHE]
