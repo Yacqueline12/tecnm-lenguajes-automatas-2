@@ -27,20 +27,215 @@
 
 ### 2.2 Prompt Estructurado
 ```text
-[Pega aquí el prompt formal que redactaste para la IA]
+[Contexto: estoy realizando una práctica de Lenguajes y Autómatas II donde necesito crear un mini evaluador de expresiones matemáticas. El programa debe leer una expresión escrita como texto y calcular su resultado respetando la precedencia de operadores y el uso de paréntesis.
+
+Rol: actúa como un programador con experiencia en lenguaje C y en la construcción de analizadores sintácticos sencillos.
+
+Especificación: necesito implementar la función:long evaluar_expresion(const char *fuente, int *error); La solución debe aceptar números enteros, los operadores +, -, * y /, además de paréntesis y espacios en blanco, tambien debe respetar la precedencia de operadores, evaluando primero multiplicaciones y divisiones antes que sumas y restas. Los códigos de error son:
+
+error = 1 para división entre cero. error = 2 para expresiones con sintaxis inválida.
+
+No se deben utilizar variables dentro de la expresión ni implementar menos unario. La firma original debe conservarse exactamente igual, no debe incluirse una función main() y el código debe compilar correctamente usando: -Wall -Wextra -Werror
+
+Output: devuelve únicamente el contenido completo de un archivo .c listo para compilar, sin explicaciones adicionales.]
 ```
 
 ---
 
 ## 3. Código Devuelto por el Modelo
 ```c
-// Código devuelto por el LLM
+%%writefile ia_sesion10_c.c
+/* ia_sesion10_c.c - Fase 2: El Cientifico
+ *
+ * Pega aqui el codigo que te devolvio la IA, con la MISMA firma
+ * que declara api_sesion10.h. No puede traer main().
+ */
+#include "api_sesion10.h"
+
+typedef struct { const char *s; int error; } Parser;
+
+static void saltar(Parser *p)
+{
+    while (*p->s == ' ')
+        p->s++;
+}
+
+static long leer_numero(Parser *p)
+{
+    long n = 0;
+
+    while (isdigit((unsigned char)*p->s))
+    {
+        n = n * 10 + (*p->s - '0');
+        p->s++;
+    }
+
+    return n;
+}
+
+long expr(Parser *p);
+
+long primaria(Parser *p)
+{
+    long valor;
+
+    saltar(p);
+if (isdigit((unsigned char)*p->s))
+        return leer_numero(p);
+
+    if (*p->s == '(')
+    {
+        p->s++;
+
+        valor = expr(p);
+
+        saltar(p);
+
+        if (*p->s != ')')
+        {
+            p->error = 2;
+            return 0;
+        }
+
+        p->s++;
+        return valor;
+    }
+ p->error = 2;
+    return 0;
+}
+
+long termino(Parser *p)
+{
+    long resultado = primaria(p);
+
+    while (p->error == 0)
+    {
+        long rhs;
+
+        saltar(p);
+
+        if (*p->s == '*')
+        {
+            p->s++;
+            rhs = primaria(p);
+            resultado *= rhs;
+        }
+        else if (*p->s == '/')
+        {
+            p->s++;
+            rhs = primaria(p);
+
+            if (rhs == 0)
+            {
+ p->error = 1;
+                return 0;
+            }
+
+            resultado /= rhs;
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    return resultado;
+}
+
+long expr(Parser *p)
+{
+    long resultado = termino(p);
+
+    while (p->error == 0)
+    {
+        long rhs;
+
+        saltar(p);
+
+        if (*p->s == '+')
+        {
+            p->s++;
+
+rhs = termino(p);
+            resultado += rhs;
+        }
+        else if (*p->s == '-')
+        {
+            p->s++;
+            rhs = termino(p);
+            resultado -= rhs;
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    return resultado;
+}
+long evaluar_expresion(const char *fuente, int *error)
+{
+    static int sin_error;
+
+    if (error == NULL)
+        error = &sin_error;
+
+    *error = 0;
+
+    if (fuente == NULL)
+    {
+        *error = 2;
+        return 0;
+    }
+Parser p = { fuente, 0 };
+
+    long valor = expr(&p);
+
+    saltar(&p);
+
+    if (p.error == 0 && *p.s != '\0')
+        p.error = 2;
+
+    *error = p.error;
+
+    if (p.error != 0)
+        return 0;
+
+    return valor;
+}
 ```
 
 ---
 
 ## 4. Fase 3: El Auditor (Resultados del Test Harness)
 *Pruebas ejecutadas:* Batería de 10 expresiones mixtas complejas
+
+=== AUDITORIA SESION 10 - Mini-evaluador de expresiones (Hito 1) ===
+
+Caso                               esperado:              obtenido:  
+resultado
+
+
+[ 1] "2+3*4"                            esperado: 14           obtenido: 14
+OK
+
+
+[ 2] "(2+3)*4"                          esperado: 20           obtenido: 20           OK
+
+
+[ 3] "10/0" -> error 1                  esperado: 1            obtenido: 1            OK
+
+
+[ 4] "2+" -> error 2                    esperado: 2            obtenido: 2            OK
+
+
+[ 5] "  7 "                             esperado: 7            obtenido: 7            OK
+
+
+[ 6] "5-10"                             esperado: -5           obtenido: -5           OK
+
+RESULTADO: 6/6 pruebas superadas
+TODO EN VERDE. Documenta tu auditoria en auditorias/auditoria_sesion10.md
 
 * [ ] Caso base y límites superados sin *Crash*.
 * [ ] No existen accesos fuera de límites ni *Memory Leaks*.
