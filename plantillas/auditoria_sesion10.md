@@ -2,9 +2,9 @@
 **Materia:** Lenguajes y Autómatas II (SCD-1016)  
 **Tema:** Hito 1: Mini-Evaluador de Expresiones  
 **Docente Titular:** MCC. Iván Márquez Larios (`ijmarquezl`)  
-**Estudiante:** [Nombre Completo]  
-**Matrícula:** [No. de Control]  
-**Track:** [ C | Rust ]  
+**Estudiante:** [Jimena Yacqueline Canche Pablo]  
+**Matrícula:** [24531347]  
+**Track:** [ C ]  
 
 ---
 
