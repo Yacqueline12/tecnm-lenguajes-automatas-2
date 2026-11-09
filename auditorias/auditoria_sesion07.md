@@ -145,4 +145,4 @@ TODO EN VERDE. Documenta tu auditoria en auditorias/auditoria_sesion07.md
 > La propuesta generada por la IA resolvía correctamente las operaciones aritméticas principales, pero verificque cuidadosamente el manejo del caso donde el árbol recibido es NULL. Este caso se detectó gracias al harness de pruebas, que comprobaba explícitamente la asignación de error = 2. Después de revisar la implementación, confirmé que el error se propagaba correctamente y que la función cumplía con todos los casos de prueba.
 
 ---
-**Firma digital:** [YACQUELINECANCHE]
+**Firma digital:** [Yacqueline12]
