@@ -140,4 +140,4 @@ TODO EN VERDE. Documenta tu auditoria en auditorias/auditoria_sesion05.md
 > Al revisar el código que me dio la IA, me di cuenta de que debía tener mucho cuidado con el tamaño del buffer, porque si no hay suficiente espacio se pueden presentar errores al guardar los números y operadores, Para solucionarlo, revisé las condiciones del espacio disponible y realicé las pruebas del programa para verificar que los resultados fueran correctos.
 
 ---
-**Firma digital:** [YACQUELINECANCHE]
+**Firma digital:** [Yacqueline12]
