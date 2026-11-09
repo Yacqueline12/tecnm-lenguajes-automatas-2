@@ -120,4 +120,4 @@ TODO EN VERDE. Documenta tu auditoria en auditorias/auditoria_sesion09.md
 > La IA generó el código, pero fue necesario que lo revisara para asegurarme de que cumpliera exactamente con los requisitos de la práctica. Verifiqué que la función respetara el formato solicitado, que no incluyera una función main() y que manejara correctamente el tamaño del buffer para evitar errores. Después de realizar las pruebas con el harness confirmé que todos los casos fueron superados correctamente.
 
 ---
-**Firma digital:** [YACQUELINE CANCHE]
+**Firma digital:** [Yacqueline12]
