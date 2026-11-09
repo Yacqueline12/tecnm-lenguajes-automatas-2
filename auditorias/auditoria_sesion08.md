@@ -133,4 +133,4 @@ TODO EN VERDE. Documenta tu auditoria en auditorias/auditoria_sesion08.md
 > La propuesta generada por la IA resolvía correctamente los casos del harness, pero no explicaba de forma detallada porqué debía tratarse primero el tipo ERROR antes de aplicar la promoción entre tipos. Durante la revisión confirmé que este caso era importante porque, si se ignoraba, se podría devolver un tipo válido cuando en realidad existía una condición de error. También verifiqué que los nombres devueltos por nombre_tipo() coincidieran exactamente con los esperados por el harness para evitar fallos en las comparaciones de cadenas.
 
 ---
-**Firma digital:** [YACQUELINE CANCHE]
+**Firma digital:** [Yacqueline12]
