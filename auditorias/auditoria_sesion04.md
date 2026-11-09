@@ -147,4 +147,4 @@ TODO EN VERDE. Documenta tu auditoria en auditorias/auditoria_sesion04.md
 > Un problema que tomé en cuenta fue cuando la función evaluar() recibe un nodo vacío (NULL), ya que esto podría causar un error si el programa intenta utilizarlo. Para solucionarlo, agregué una condición que revisa si el nodo existe y, si no existe, devuelve -1. También revisé que cada operación tuviera sus dos hijos antes de realizar el cálculo.
 
 ---
-**Firma digital:** [YACQUELINECANCHE]
+**Firma digital:** [Yacqueline12]
