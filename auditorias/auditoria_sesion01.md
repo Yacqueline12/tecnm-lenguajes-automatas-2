@@ -103,4 +103,4 @@ TODO EN VERDE. Documenta tu auditoria en auditorias/auditoria_sesion01.md
 > Al revisar el código de la IA, me fijé en que era importante comprobar qué pasaba cuando la cadena estaba vacía o tenía el valor NULL, porque podía causar errores si no se revisaban esos casos. Para evitarlo, se agregó una condición para que el programa terminara sin hacer cambios cuando la cadena estuviera vacía o fuera NULL. Después ejecuté las pruebas en Google Colab y todas pasaron correctamente, obteniendo un resultado de 6/6 pruebas superadas.
 
 ---
-**Firma digital:** [YACQUELINECANCHE]
+**Firma digital:** [Yacqueline12]
