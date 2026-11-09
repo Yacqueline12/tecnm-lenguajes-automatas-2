@@ -112,4 +112,4 @@ int ejecutar(const char *comando) {
 > Como apenas me estoy familiarizando nuevamente con GitHub y los códigos en lenguaje C, sabía que la IA podía generar código con errores o que no cumpliera completamente con lo que se pedía. Por eso, fui revisando constantemente el código que me proporcionaba y le preguntaba cómo lo había realizado y para qué servía cada parte. Cuando aparecían errores, revisaba las indicaciones y volvía a consultar con la IA para entender qué estaba pasando y cómo podía solucionarlo. 
 
 ---
-**Firma digital:** [YACQUELINECANCHE]
+**Firma digital:** [Yacqueline12]
