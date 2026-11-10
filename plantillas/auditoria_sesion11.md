@@ -133,6 +133,27 @@ int insertar_simbolo(
 ## 4. Fase 3: El Auditor (Resultados del Test Harness)
 *Pruebas ejecutadas:* Manejo de claves duplicadas y colisiones
 
+=== AUDITORIA SESION 12 - Registro de simbolo y offsets alineados ===
+
+Caso                               esperado:              obtenido:              resultado
+
+[ 1] ancho_de_tipo("int")               esperado: 4            obtenido: 4            OK
+
+[ 2] ancho_de_tipo("double")            esperado: 8            obtenido: 8            OK
+
+[ 3] int en cursor 0                    esperado: 4            obtenido: 4            OK
+
+[ 4] char e int: offset de b            esperado: 4            obtenido: 4            OK
+
+[ 5] double desde cursor 4              esperado: 8            obtenido: 8            OK
+
+[ 6] registro NULL                      esperado: -1           obtenido: -1           OK
+
+
+RESULTADO: 6/6 pruebas superadas
+TODO EN VERDE. Documenta tu auditoria en auditorias/auditoria_sesion12.md
+
+
 * [✓] Caso base y límites superados sin *Crash*.
 * [✓] No existen accesos fuera de límites ni *Memory Leaks*.
 * [✓] La complejidad teórica coincide con la implementada.
