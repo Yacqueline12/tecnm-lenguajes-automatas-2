@@ -155,6 +155,7 @@ Caso                               esperado:              obtenido:             
 
 
 RESULTADO: 6/6 pruebas superadas
+
 TODO EN VERDE. Documenta tu auditoria en auditorias/auditoria_sesion13.md
 
 
