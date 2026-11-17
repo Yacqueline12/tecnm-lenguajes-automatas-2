@@ -99,7 +99,7 @@ int verificar_llamada(const Funcion *catalogo, int total, const char *nombre, in
         TODO EN VERDE. Documenta tu auditoria en auditorias/auditoria_sesion16.md
 
 * [✓] Caso base y límites superados sin *Crash*.
-* [✓] No existen accesos fuera de límites ni *Memory Leaks*.
+* [ ] No existen accesos fuera de límites ni *Memory Leaks*.
 * [✓] La complejidad teórica coincide con la implementada.
 
 ### Reporte Crítico
