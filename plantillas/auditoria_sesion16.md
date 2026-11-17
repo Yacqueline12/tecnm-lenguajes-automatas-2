@@ -87,24 +87,16 @@ int verificar_llamada(const Funcion *catalogo, int total, const char *nombre, in
 *Pruebas ejecutadas:* Llamadas con número incorrecto de args
 
               === AUDITORIA SESION 16 - Registro de prototipos y aridad ===
-Caso                                esperado:             obtenido:           resultado
+        Caso                          esperado:             obtenido:         resultado
+        [ 1] suma con 3 argumentos         esperado: 1        obtenido: 1            OK
+        [ 2] suma con 2 argumentos         esperado: 0        obtenido: 0            OK
+        [ 3] suma con 4 argumentos         esperado: 0        obtenido: 0            OK
+        [ 4] funcion no registrada         esperado: -1       obtenido: -1           OK
+        [ 5] main sin argumentos           esperado: 1        obtenido: 1            OK
+        [ 6] nombre NULL                   esperado: -1       obtenido: -1           OK
 
-[ 1] suma con 3 argumentos         esperado: 1            obtenido: 1            OK
-
-[ 2] suma con 2 argumentos         esperado: 0            obtenido: 0            OK
-
-[ 3] suma con 4 argumentos         esperado: 0            obtenido: 0            OK
-
-[ 4] funcion no registrada         esperado: -1           obtenido: -1           OK
-
-[ 5] main sin argumentos           esperado: 1            obtenido: 1            OK
-
-[ 6] nombre NULL                   esperado: -1           obtenido: -1           OK
-
-
-RESULTADO: 6/6 pruebas superadas
-
-TODO EN VERDE. Documenta tu auditoria en auditorias/auditoria_sesion16.md
+        RESULTADO: 6/6 pruebas superadas
+        TODO EN VERDE. Documenta tu auditoria en auditorias/auditoria_sesion16.md
 
 * [✓] Caso base y límites superados sin *Crash*.
 * [✓] No existen accesos fuera de límites ni *Memory Leaks*.
