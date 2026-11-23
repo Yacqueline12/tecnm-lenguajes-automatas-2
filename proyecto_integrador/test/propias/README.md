@@ -1,4 +1,5 @@
-Pruebas propias
+# Pruebas propias
+
 Aquí puedes agregar tus propios programas de prueba y sus salidas esperadas. Se revisan con make test-propias y cuentan en el criterio "Pruebas" de la rúbrica.
 
 Convención: un archivo .lj por caso y, junto a él, el archivo que describe lo esperado:
