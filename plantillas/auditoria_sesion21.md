@@ -80,6 +80,27 @@ void emitir_cuadruplo(char *dst,
 
 ## 4. Fase 3: El Auditor (Resultados del Test Harness)
 *Pruebas ejecutadas:* Expresiones aritméticas compuestas
+                               
+                === AUDITORIA SESION 21 - Cuadruplos y temporales unicos ===
+        Caso                           esperado:          obtenido:        resultado
+        [ 1] nuevo_temporal(_t0)       esperado: _t0      obtenido: _t0        OK
+        [ 2] nuevo_temporal(_t7)       esperado: _t7      obtenido: _t7        OK
+        [ 3] cuadruplo de a + b
+     esperado: (+, a, b, _t0)
+     obtenido: (+, a, b, _t0)
+     -> OK
+     [ 4] cuadruplo de _t0 * c
+     esperado: (*, _t0, c, _t1)
+     obtenido: (*, _t0, c, _t1)
+     -> OK
+     [ 5] asignacion simple         esperado: (=, a, _, x)   obtenido: (=, a, _, x) OK
+     [ 6] goto sin operandos
+     esperado: (goto, L1, _, _)
+     obtenido: (goto, L1, _, _)
+     -> OK
+     
+     RESULTADO: 6/6 pruebas superadas
+     TODO EN VERDE. Documenta tu auditoria en auditorias/auditoria_sesion21.md
 
 * [✓] Caso base y límites superados sin *Crash*.
 * [✓] No existen accesos fuera de límites ni *Memory Leaks*.
