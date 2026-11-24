@@ -11,5 +11,6 @@ Convención: un archivo .lj por caso y, junto a él, el archivo que describe lo 
 - asm para la salida exacta de -- asm
 - err para exigir al menos un diagnóstico concreto de --check
 - diag para exigir la lista exacta de diagnósticos de --check
+  
 El listado de casos está en CASOS.md.
 
