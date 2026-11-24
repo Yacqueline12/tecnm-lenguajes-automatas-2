@@ -32,7 +32,6 @@
 Rol: actúa como un programador especializado en compiladores y generación de código intermedio en lenguaje C.
 
 Especificación: se deben implementar las funciones nuevo_temporal() y emitir_cuadruplo() respetando exactamente las firmas proporcionadas. nuevo_temporal() debe generar nombres con el formato _t0, _t1, _t2, etc., utilizando el valor actual del contador y después incrementándolo. emitir_cuadruplo() debe escribir el cuádruplo con el formato (op, a1, a2, res).
-
 Si alguno de los operandos o el resultado es NULL, se debe escribir el carácter _ en su lugar. Las funciones deben escribir siempre en el buffer recibido sin reservar memoria dinámica ni utilizar variables globales. No debe incluirse la función main() y el código debe compilar correctamente con -Wall -Wextra -Werror.
 
 Output: devuelve únicamente el código completo para el archivo ia_sesion21_c.c.]
