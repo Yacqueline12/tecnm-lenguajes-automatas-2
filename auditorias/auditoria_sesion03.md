@@ -104,20 +104,18 @@ int ejecutar(const char *comando) {
 *Pruebas ejecutadas:* Detección de errores de compilación GCC
 
                      === AUDITORIA SESION 03 - Archivos y codigos de salida ===
-          Caso                    esperado:          obtenido:                         resultado[ 1]      escribir_texto(...)==0               esperado: 0        obtenido: 0            OK
+                     
+          Caso                             esperado:          obtenido:          resultado
+    [ 1] escribir_texto(...)==0            esperado: 0        obtenido: 0            OK
+    [ 2] contar_lineas(3 lineas)           esperado: 3        obtenido: 3            OK
+    [ 3] contar_lineas(sin salto final)    esperado: 2        obtenido: 2            OK
+    [ 4] contar_lineas(inexistente)        esperado: -1       obtenido: -1           OK
+    [ 5] ejecutar("true")                  esperado: 0        obtenido: 0            OK
+    [ 5] ejecutar("true")                  esperado: 0        obtenido: 0            OK
+    [ 6] ejecutar("false")                 esperado: 1        obtenido: 1            OK
 
-
-
-                                                    
-                        
-[ 2] contar_lineas(3 lineas)            esperado: 3            obtenido: 3            OK
-[ 3] contar_lineas(sin salto final)     esperado: 2            obtenido: 2            OK
-[ 4] contar_lineas(inexistente)         esperado: -1           obtenido: -1           OK
-[ 5] ejecutar("true")                   esperado: 0            obtenido: 0            OK
-[ 6] ejecutar("false")                  esperado: 1            obtenido: 1            OK
-
-
-
+    RESULTADO: 6/6 pruebas superadas
+    TODO EN VERDE. Documenta tu auditoria en auditorias/auditoria_sesion03.md
 
 * [✓] Caso base y límites superados sin *Crash*.
 * [✓] No existen accesos fuera de límites ni *Memory Leaks*.
