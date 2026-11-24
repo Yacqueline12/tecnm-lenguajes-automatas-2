@@ -82,9 +82,9 @@ void emitir_cuadruplo(char *dst,
 *Pruebas ejecutadas:* Expresiones aritméticas compuestas
                                
                 === AUDITORIA SESION 21 - Cuadruplos y temporales unicos ===
-        Caso                           esperado:          obtenido:        resultado
-        [ 1] nuevo_temporal(_t0)       esperado: _t0      obtenido: _t0        OK
-        [ 2] nuevo_temporal(_t7)       esperado: _t7      obtenido: _t7        OK
+        Caso                        esperado:          obtenido:        resultado
+        [ 1] nuevo_temporal(_t0)    esperado: _t0      obtenido: _t0        OK
+        [ 2] nuevo_temporal(_t7)    esperado: _t7      obtenido: _t7        OK
         [ 3] cuadruplo de a + b
      esperado: (+, a, b, _t0)
      obtenido: (+, a, b, _t0)
