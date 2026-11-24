@@ -103,6 +103,22 @@ int ejecutar(const char *comando) {
 ## 4. Fase 3: El Auditor (Resultados del Test Harness)
 *Pruebas ejecutadas:* Detección de errores de compilación GCC
 
+                     === AUDITORIA SESION 03 - Archivos y codigos de salida ===
+          Caso                    esperado:          obtenido:                         resultado[ 1]      escribir_texto(...)==0               esperado: 0        obtenido: 0            OK
+
+
+
+                                                    
+                        
+[ 2] contar_lineas(3 lineas)            esperado: 3            obtenido: 3            OK
+[ 3] contar_lineas(sin salto final)     esperado: 2            obtenido: 2            OK
+[ 4] contar_lineas(inexistente)         esperado: -1           obtenido: -1           OK
+[ 5] ejecutar("true")                   esperado: 0            obtenido: 0            OK
+[ 6] ejecutar("false")                  esperado: 1            obtenido: 1            OK
+
+
+
+
 * [✓] Caso base y límites superados sin *Crash*.
 * [✓] No existen accesos fuera de límites ni *Memory Leaks*.
 * [✓] La complejidad teórica coincide con la implementada.
