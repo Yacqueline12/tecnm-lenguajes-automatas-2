@@ -119,24 +119,18 @@ void liberar_lista(NodoToken *cabeza) {
 ## 4. Fase 3: El Auditor (Resultados del Test Harness)
 *Pruebas ejecutadas:* Prevención de Use-After-Free y cadenas nulas
 
-=== AUDITORIA SESION 02 - Lista enlazada de tokens en heap ===
+                    
+            === AUDITORIA SESION 02 - Lista enlazada de tokens en heap ===
+        Caso                          esperado:            obtenido:         resultado
+    [ 1] crear_nodo("if")->lexema     esperado: if         obtenido: if          OK
+    [ 2] contar_tokens(3 tokens)      esperado: 3          obtenido: 3           OK
+    [ 3] orden: segundo token         esperado: dos        obtenido: dos         OK
+    [ 4] ultimo->siguiente == NULL    esperado: 1          obtenido: 1           OK
+    [ 5] contar_tokens(NULL)          esperado: 0          obtenido: 0           OK
+    [ 6] liberar_lista(NULL)          esperado: sin crash  obtenido: sin crash   OK
 
-Caso                               esperado:              obtenido:              resultado
-
-[ 1] crear_nodo("if")->lexema           esperado: if           obtenido: if           OK
-
-[ 2] contar_tokens(3 tokens)            esperado: 3            obtenido: 3            OK
-
-[ 3] orden: segundo token               esperado: dos          obtenido: dos          OK
-
-[ 4] ultimo->siguiente == NULL          esperado: 1            obtenido: 1            OK
-
-[ 5] contar_tokens(NULL)                esperado: 0            obtenido: 0            OK
-
-[ 6] liberar_lista(NULL)                esperado: sin crash    obtenido: sin crash    OK
-
-
-Resultado Final: 6 de 6 pruebas superadas. Todas las pruebas del Test Harness se ejecutaron correctamente y no se presentaron errores durante su ejecución.
+    Resultado Final: 6 de 6 pruebas superadas. 
+    Todas las pruebas del Test Harness se ejecutaron correctamente y no se presentaron errores durante su ejecución.
 
 * [✓] Caso base y límites superados sin *Crash*.
 * [✓] No existen accesos fuera de límites ni *Memory Leaks*.
