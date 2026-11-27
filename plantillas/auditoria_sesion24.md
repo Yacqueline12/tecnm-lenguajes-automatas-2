@@ -105,18 +105,43 @@ int emitir_condicion(char lineas[][64], int max,
 *Pruebas ejecutadas:* Condiciones compuestas con AND y OR
 
 
-                                 
+                               
+                === AUDITORIA SESION 24 - Saltos condicionales con cortocircuito ===
+        Caso                          esperado:             obtenido:        resultado
+        [ 1] a && b (primer salto)
+     esperado: IFFALSE a GOTO L9
+     obtenido: IFFALSE a GOTO L9
+     -> OK
+     [ 2] a && b (segundo salto)
+     esperado: IFFALSE b GOTO L9
+     obtenido: IFFALSE b GOTO L9
+     -> OK
+     [ 3] a && b (dos saltos)         esperado: 2           obtenido: 2         OK
+     [ 4] a || b (primer salto)
+     esperado: IFTRUE a GOTO L9
+     obtenido: IFTRUE a GOTO L9
+     -> OK
+     [ 5] a || b (segundo salto)
+     esperado: IFTRUE b GOTO L9
+     obtenido: IFTRUE b GOTO L9
+     -> OK
+     [ 6] condicion simple (b NULL)
+     esperado: IFFALSE a GOTO L0
+     obtenido: IFFALSE a GOTO L0
+     -> OK
+
+     RESULTADO: 6/6 pruebas superadas}
+     TODO EN VERDE. Documenta tu auditoria en auditorias/auditoria_sesion24.md
 
 
-
-
-* [ ] Caso base y límites superados sin *Crash*.
-* [ ] No existen accesos fuera de límites ni *Memory Leaks*.
-* [ ] La complejidad teórica coincide con la implementada.
+* [✓] Caso base y límites superados sin *Crash*.
+* [✓] No existen accesos fuera de límites ni *Memory Leaks*.
+* [✓] La complejidad teórica coincide con la implementada.
 
 ### Reporte Crítico
 *¿Qué caso borde o problema omitió la IA y cómo lo solucionaste?*
-> 
+> La IA permitió organizar mejor el código mediante un arreglo y un ciclo for. También ayudó a reducir las instrucciones repetidas y mejorar las validaciones para controlar los parámetros y el tamaño de los arreglos.
+> Durante la revisión identifiqué que el harness no contempla algunos casos adicionales, como utilizar un operador inválido, un límite de instrucciones igual a uno o etiquetas demasiado largas. Por ello, revisé las validaciones del código y comprobé que se controlara el tamaño de las cadenas para evitar instrucciones incompletas.
 
 ---
-**Firma digital:** [Usuario de GitHub]
+**Firma digital:** [Yacqueline12]
