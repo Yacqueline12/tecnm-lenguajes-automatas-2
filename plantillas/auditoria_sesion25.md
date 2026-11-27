@@ -187,4 +187,4 @@ void emitir_for(char lineas[][64], int max, int *n,
 > Al revisar el código generado por la IA, identifiqué que no se comprobaba directamente el caso en el que el argumento inicio del ciclo for fuera NULL. Este caso es importante porque la inicialización es opcional y no debe agregarse ninguna instrucción cuando no se proporciona. Para solucionarlo, se agregó una condición que verifica si inicio es diferente de NULL antes de generar esa línea. También se revisó el espacio disponible en el arreglo para evitar escribir fuera de sus límites.
 
 ---
-**Firma digital:** [Usuario de GitHub]
+**Firma digital:** [Yacqueline12]
